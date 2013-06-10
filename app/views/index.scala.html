@@ -1,0 +1,13 @@
+@(entries: List[models.BlogEntry])
+
+@main("Welcome to Play 2.1") {
+
+    <h1 class="text-warning">I am a wrong headline</h1>
+
+
+    <ul>
+        @for(entry <- entries) {
+            <li>@entry.title</li>
+        }
+    </ul>
+}
