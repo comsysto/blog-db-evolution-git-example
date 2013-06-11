@@ -1,13 +1,16 @@
 @(entries: List[models.BlogEntry])
 
-@main("Welcome to Play 2.1") {
-
-    <h1 class="text-warning">I am a wrong headline</h1>
-
-
-    <ul>
-        @for(entry <- entries) {
-            <li>@entry.title</li>
-        }
-    </ul>
+@main("Blog List") {
+    @for(entry <- entries) {
+        <div class="hero-unit span12">
+            <h2 class="text-warning">@entry.title</h2>
+            <div>
+                @entry.content
+            </div>
+            <!-- TODO-NEXT-RELEASE: remove line -->
+            <div>
+                created at: @entry.createdAt
+            </div>
+        </div>
+    }
 }
